@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WindowsApp.Views.RequestDetail"
+             Title="RequestDetail"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+     
+     <Grid RowDefinitions="Auto,20,Auto,30,Auto,50,Auto" Margin="30,60,30,60">
+        <Label Grid.Row="0" Text="Requests" FontSize="32" FontFamily="Inter-Medium" />
+        <HorizontalStackLayout Spacing="10" Grid.Row="2">
+            <Image Source="chevron_left.png" WidthRequest="27" VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BackButton_Tapped}" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="Request Information" FontSize="24" FontFamily="Poppins-Medium" VerticalOptions="Center"/>
+        </HorizontalStackLayout>
+        <Grid Grid.Row="4" ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="20" RowSpacing="30">
+            <VerticalStackLayout Grid.Column="0" Grid.Row="0" Spacing="10">
+                <Label Text="Request ID" VerticalOptions="Center" FontFamily="Poppins-Medium" FontSize="20"/>
+                <Border StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="50" Padding="20,0,20,0">
+                    <Label Text="{Binding RequestID}" FontFamily="Poppins-Regular" FontSize="20" VerticalOptions="Center"/>
+                </Border>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="1" Grid.Row="0" Spacing="10">
+                <Label Text="Date Requested" VerticalOptions="Center" FontFamily="Poppins-Medium" FontSize="20"/>
+                <Border StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="50" Padding="20,0,20,0">
+                    <Label Text="{Binding RequestedDate, StringFormat='{0:MM/dd/yyyy}'}" FontFamily="Poppins-Regular" FontSize="20" VerticalOptions="Center"/>
+                </Border>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="0" Grid.Row="1" Spacing="10">
+                <Label Text="From" VerticalOptions="Center" FontFamily="Poppins-Medium" FontSize="20"/>
+                <Border StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="50" Padding="20,0,20,0">
+                    <Label Text="{Binding CustomerName}" FontFamily="Poppins-Regular" FontSize="20" VerticalOptions="Center"/>
+                </Border>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="1" Grid.Row="1" Spacing="10">
+                <Label Text="Account ID" VerticalOptions="Center" FontFamily="Poppins-Medium" FontSize="20"/>
+                <Border StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="50" Padding="20,0,20,0">
+                    <Label Text="{Binding AccountID}" FontFamily="Poppins-Regular" FontSize="20" VerticalOptions="Center"/>
+                </Border>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="0" Grid.Row="2" Spacing="10">
+                <Label Text="Product Name" VerticalOptions="Center" FontFamily="Poppins-Medium" FontSize="20"/>
+                <Border StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="50" Padding="20,0,20,0">
+                    <Label Text="{Binding ProductName}" FontFamily="Poppins-Regular" FontSize="20" VerticalOptions="Center"/>
+                </Border>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="1" Grid.Row="2" Spacing="10">
+                <Label Text="Old Activation Code" VerticalOptions="Center" FontFamily="Poppins-Medium" FontSize="20"/>
+                <Border StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="50" Padding="20,0,20,0">
+                    <Label Text="{Binding OldActivationCode}" FontFamily="Poppins-Regular" FontSize="20" VerticalOptions="Center"/>
+                </Border>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="0" Grid.Row="3" Spacing="10">
+                <Label Text="Old Expiration Date" VerticalOptions="Center" FontFamily="Poppins-Medium" FontSize="20"/>
+                <Border StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="50" Padding="20,0,20,0">
+                    <Label Text="{Binding OldExpirationDate, StringFormat='{0:MM/dd/yyyy}'}" FontFamily="Poppins-Regular" FontSize="20" VerticalOptions="Center"/>
+                </Border>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="1" Grid.Row="3" Spacing="10">
+                <Label Text="New Expiration Date" VerticalOptions="Center" FontFamily="Poppins-Medium" FontSize="20"/>
+                <Border StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="50" Padding="20,0,20,0">
+                    <Label Text="{Binding NewExpirationDate, StringFormat='{0:MM/dd/yyyy}'}" FontFamily="Poppins-Regular" FontSize="20" VerticalOptions="Center"/>
+                </Border>
+            </VerticalStackLayout>
+        </Grid>
+        <HorizontalStackLayout Grid.Row="6" HorizontalOptions="Center" Spacing="20">
+            <Button Text="Reject" Command="{Binding RejectButton_Tapped}" FontFamily="Inter-SemiBold" FontSize="20" WidthRequest="320" HeightRequest="65" HorizontalOptions="Center" CornerRadius="3" BackgroundColor="#FF3951"/>
+            <Button Text="Go to customer page" FontFamily="Inter-SemiBold" FontSize="20" WidthRequest="320" HeightRequest="65" HorizontalOptions="Center" CornerRadius="3" BackgroundColor="#3D52A0"/>
+            <Button Text="Approve" Command="{Binding ApproveButton_Tapped}" FontFamily="Inter-SemiBold" FontSize="20" WidthRequest="320" HeightRequest="65" HorizontalOptions="Center" CornerRadius="3" BackgroundColor="#3D52A0"/>
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>

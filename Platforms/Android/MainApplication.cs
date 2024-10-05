@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace HeThongQuanLy;
+namespace WindowsApp;
 
 [Application]
 public class MainApplication : MauiApplication

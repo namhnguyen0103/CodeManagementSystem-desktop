@@ -60,7 +60,7 @@ void xamarin_setup_impl ()
 	xamarin_runtime_libraries = xamarin_runtime_libraries_array;
 	xamarin_gc_pump = FALSE;
 	xamarin_init_mono_debug = TRUE;
-	xamarin_executable_name = "HeThongQuanLy.dll";
+	xamarin_executable_name = "WindowsApp.dll";
 	mono_use_llvm = FALSE;
 	xamarin_log_level = 0;
 	xamarin_arch_name = "arm64";

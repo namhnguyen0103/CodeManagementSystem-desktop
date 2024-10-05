@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             xmlns:data="clr-namespace:WindowsApp.Models"
+             xmlns:vm="clr-namespace:WindowsApp.ViewModels"
+             x:Class="WindowsApp.Views.CustomerPage"
+             Title="CustomerPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+    
+    <Grid RowDefinitions="Auto,20,Auto,30,Auto,30,*" Margin="30,60,30,60">
+        <Label Grid.Row="0" Text="Customers" FontSize="32" FontFamily="Inter-Medium" />
+        <HorizontalStackLayout Spacing="10" Grid.Row="2">
+            <Image Source="chevron_left.png" WidthRequest="27" VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BackButton_Tapped}" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="Customer Information" FontSize="24" FontFamily="Poppins-Medium" VerticalOptions="Center"/>
+        </HorizontalStackLayout>
+        <Grid Grid.Row="4" RowDefinitions="*,*" ColumnDefinitions="*,*" ColumnSpacing="20" RowSpacing="30">
+            <VerticalStackLayout Grid.Column="0" Grid.Row="0" Spacing="10">
+                <Label Text="Customer Name" VerticalOptions="Center" FontFamily="Poppins-Medium" FontSize="20"/>
+                <Border StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="50" Padding="20,0,20,0">
+                    <Label Text="{Binding Name}" FontFamily="Poppins-Regular" FontSize="20" VerticalOptions="Center"/>
+                </Border>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="1" Grid.Row="0" Spacing="10">
+                <Label Text="Account ID" VerticalOptions="Center" FontFamily="Poppins-Medium" FontSize="20"/>
+                <Border StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="50" Padding="20,0,20,0">
+                    <Label Text="{Binding AccountID}" FontFamily="Poppins-Regular" FontSize="20" VerticalOptions="Center"/>
+                </Border>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="0" Grid.Row="1" Spacing="10">
+                <Label Text="Email" VerticalOptions="Center" FontFamily="Poppins-Medium" FontSize="20"/>
+                <Border StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="50" Padding="20,0,20,0">
+                    <Label Text="{Binding Email}" FontFamily="Poppins-Regular" FontSize="20" VerticalOptions="Center"/>
+                </Border>
+            </VerticalStackLayout>
+        </Grid>
+
+        <VerticalStackLayout Grid.Row="6" Grid.ColumnSpan="2" Spacing="10">
+            <Label Text="Purchased Products" VerticalOptions="Center" FontFamily="Poppins-Medium" FontSize="20" HeightRequest="50"/>
+            <VerticalStackLayout>
+                <Grid ColumnDefinitions="3*, *" RowDefinitions="*,Auto" VerticalOptions="Center" HeightRequest="30">
+                    <Label Grid.Row="0" Grid.Column="0" Text="Product Name" FontFamily="Poppins-SemiBold" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="Expiration Date" FontFamily="Poppins-SemiBold" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>                       
+                    <Border Grid.Row="1" Grid.ColumnSpan="2" HeightRequest="1" BackgroundColor="#7091E6" StrokeThickness="0"/>
+                </Grid>
+
+                <!-- <ScrollView>
+                    <StackLayout BindableLayout.ItemsSource="{Binding CustomerProducts}" BackgroundColor="Transparent">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate x:DataType="data:UserProduct">
+
+                                <Grid ColumnDefinitions="3*,*"> 
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:CustomerViewModel}},Path=Item_Select}" CommandParameter="{Binding}"/>
+                                    </Grid.GestureRecognizers>
+                                    <Label Grid.Column="0" Text="{Binding ProductName}" FontFamily="Poppins-Regular" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Text="{Binding ExpirationDate, StringFormat='{0:MM/dd/yyyy}'}" FontFamily="Inter-Regular" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Grid>
+
+
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                </ScrollView> -->
+
+                <ListView ItemsSource="{Binding ProductList}" ios:ListView.RowAnimationsEnabled="false" ios:ListView.SeparatorStyle="FullWidth"> 
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="data:UserProduct">
+                            <ViewCell>
+                                <Grid ColumnDefinitions="3*,*"> 
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:CustomerViewModel}},Path=Item_Select}" CommandParameter="{Binding}"/>
+                                    </Grid.GestureRecognizers>
+                                    <Label Grid.Column="0" Text="{Binding Product.Product_name}" FontFamily="Poppins-Regular" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Text="{Binding ExpirationDate, StringFormat='{0:MM/dd/yyyy}'}" FontFamily="Inter-Regular" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+        <ActivityIndicator Grid.Row="6" IsRunning="{Binding IsBusy}" Color="#3D52A0"/>
+
+    </Grid>
+
+</ContentPage>

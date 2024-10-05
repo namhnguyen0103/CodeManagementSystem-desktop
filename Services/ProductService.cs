@@ -1,9 +1,10 @@
-﻿using System.Net.Http.Json;
+﻿using WindowsApp.Repository;
+using WindowsApp.Models;
+using System.Net.Http.Json;
 using Newtonsoft.Json;
-using HeThongQuanLy.Models;
-using HeThongQuanLy.Repository;
+using System.Text;
 
-namespace HeThongQuanLy.Services;
+namespace WindowsApp.Services;
 
 public class ProductService : IProductRepository
 {
@@ -12,25 +13,7 @@ public class ProductService : IProductRepository
     public ProductService()
     {
         _httpclient = new HttpClient();
-        _httpclient.BaseAddress = new Uri(Constant.API_BASE_URL+"products/");
-    }
-
-    public async Task<List<Models.Product>?> GetAllAsync()
-    {
-        var productList = new List<Models.Product>();
-        
-        if(Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
-            return null;
-
-        HttpResponseMessage response = await _httpclient.GetAsync("");
-        if (response.IsSuccessStatusCode)
-        {
-            string content = response.Content.ReadAsStringAsync().Result;
-            productList = JsonConvert.DeserializeObject<List<Product>>(content);
-
-            return productList;
-        }
-        return null;
+        _httpclient.BaseAddress = new Uri(Constants.API_BASE_URL+"products/");
     }
 
     public async Task<Product?> GetByIdAsync(int id)

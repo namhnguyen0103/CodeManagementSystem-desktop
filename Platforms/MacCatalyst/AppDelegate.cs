@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace HeThongQuanLy;
+namespace WindowsApp;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate

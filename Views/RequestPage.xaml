@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             xmlns:data="clr-namespace:WindowsApp.Models"
+             xmlns:vm="clr-namespace:WindowsApp.ViewModels"
+             x:Class="WindowsApp.Views.RequestPage"
+             Title="RequestPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+
+     <Grid RowDefinitions="Auto,20,Auto,10,Auto,20,Auto,Auto,*" Margin="30,60,30,60">
+        <Label Grid.Row="0" Text="Requests" FontSize="32" FontFamily="Inter-Medium" />
+        <Label Grid.Row="2" Text="Request Search" FontSize="24" FontFamily="Poppins-Medium" />
+
+        <Grid Grid.Row="4" ColumnDefinitions="5*,*,*" ColumnSpacing="10">
+            <Border Grid.Column="0" StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="50" Padding="20,0,20,0">
+                <Entry Placeholder="Search a request" FontFamily="Poppins-Light" FontSize="15" HeightRequest="40"/>
+            </Border>
+            <Button Grid.Column="1" Text="Search" CornerRadius="3" BackgroundColor="#3D52A0" HeightRequest="40" VerticalOptions="Center" />
+            <Button Grid.Column="2" Text="Refresh List" Command="{Binding RefreshList_Command}" CornerRadius="3" BackgroundColor="#3D52A0" HeightRequest="40" VerticalOptions="Center" />
+        </Grid>
+
+        <Grid Grid.Row="6" ColumnDefinitions="*, *, *, *" VerticalOptions="Center" HeightRequest="30">
+            <Label Grid.Column="0" Text="Request ID" FontFamily="Poppins-SemiBold" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Grid.Column="1" Text="From" FontFamily="Poppins-SemiBold" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Grid.Column="2" Text="Product Name" FontFamily="Poppins-SemiBold" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Grid.Column="3" Text="Requested Date" FontFamily="Poppins-SemiBold" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>                             
+        </Grid>
+
+        <Border Grid.Row="7" HeightRequest="1" BackgroundColor="#7091E6" StrokeThickness="0"/>
+
+        <Label Grid.Row="8" Grid.RowSpan="2" Text="No requests" FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontFamily="Mulish-ExtraLightItalic" IsVisible="{Binding IsEmpty}"/>
+
+        <ListView Grid.Row="8" ItemsSource="{Binding RequestList}" ios:ListView.SeparatorStyle="FullWidth" BackgroundColor="Transparent">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell x:DataType="data:Request">
+                        <Grid ColumnDefinitions="*, *, *, *">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:RequestPageViewModel}}, Path=Item_Select}" CommandParameter="{Binding}" />
+                            </Grid.GestureRecognizers>
+
+                            <Label Grid.Column="0" Text="{Binding Id}" FontFamily="Inter-Regular" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Grid.Column="1" Text="{Binding Customer_name}" FontFamily="Inter-Regular" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Grid.Column="2" Text="{Binding Product_name}" FontFamily="Inter-Regular" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Grid.Column="3" Text="{Binding Created_at,StringFormat='{0:MM/dd/yyyy}'}" FontFamily="Inter-Regular" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>                             
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ActivityIndicator Grid.Row="8" IsRunning="{Binding IsBusy}" Color="#3D52A0"/>
+    </Grid>
+</ContentPage>

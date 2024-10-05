@@ -1,0 +1,113 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0-ios
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WindowsApp
+build_property.ProjectDir = /Users/nguyenhoangnam/Desktop/ThucTap/Project/WindowsApp/WindowsApp/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/WindowsApp/WindowsApp/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = WindowsApp.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/WindowsApp/WindowsApp/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = WindowsApp.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/WindowsApp/WindowsApp/Controls/FlyoutHeader.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = WindowsApp.Controls.FlyoutHeader.xaml
+build_metadata.AdditionalFiles.TargetPath = Controls/FlyoutHeader.xaml
+build_metadata.AdditionalFiles.RelativePath = Controls/FlyoutHeader.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/WindowsApp/WindowsApp/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = WindowsApp.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Colors.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/WindowsApp/WindowsApp/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = WindowsApp.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Styles.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/WindowsApp/WindowsApp/Views/AdminDetail.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = WindowsApp.Views.AdminDetail.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/AdminDetail.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/AdminDetail.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/WindowsApp/WindowsApp/Views/AdminPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = WindowsApp.Views.AdminPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/AdminPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/AdminPage.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/WindowsApp/WindowsApp/Views/CreateAdminPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = WindowsApp.Views.CreateAdminPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/CreateAdminPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/CreateAdminPage.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/WindowsApp/WindowsApp/Views/CustomerPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = WindowsApp.Views.CustomerPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/CustomerPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/CustomerPage.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/WindowsApp/WindowsApp/Views/CustomerRenewPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = WindowsApp.Views.CustomerRenewPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/CustomerRenewPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/CustomerRenewPage.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/WindowsApp/WindowsApp/Views/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = WindowsApp.Views.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/LoginPage.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/WindowsApp/WindowsApp/Views/ProductPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = WindowsApp.Views.ProductPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/ProductPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/ProductPage.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/WindowsApp/WindowsApp/Views/RequestDetail.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = WindowsApp.Views.RequestDetail.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/RequestDetail.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/RequestDetail.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/WindowsApp/WindowsApp/Views/RequestPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = WindowsApp.Views.RequestPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/RequestPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/RequestPage.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/WindowsApp/WindowsApp/Views/SearchPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = WindowsApp.Views.SearchPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/SearchPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/SearchPage.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/WindowsApp/WindowsApp/Views/SettingPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = WindowsApp.Views.SettingPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/SettingPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/SettingPage.xaml

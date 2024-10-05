@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
-using CommunityToolkit.Maui;
+﻿using CommunityToolkit.Maui.Markup;
+using Microsoft.Extensions.Logging;
 
-namespace HeThongQuanLy;
+namespace WindowsApp;
 
 public static class MauiProgram
 {
@@ -10,23 +10,19 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
-			.UseMauiCommunityToolkit()
+			// .UseMauiCommunityToolkitMarkup()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-				fonts.AddFont("Mulish-Regular.ttf", "MulishRegular");
-				fonts.AddFont("Mulish-SemiBold.ttf", "MulishSemibold");
-				fonts.AddFont("Mulish-Light.ttf", "MulishLight");
 			});
-			builder.Services.AddTransientPopup<Views.LoginPopup, ViewModels.LoginPopupViewModel>();
+
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
-		// builder.Services.AddSingleton<ViewModels.ShoppingCartViewModel>();
 		Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping("Borderless", (handler, view) =>
         {
-#if  IOS
+#if  MACCATALYST
             handler.PlatformView.BackgroundColor = UIKit.UIColor.Clear;
             handler.PlatformView.Layer.BorderWidth = 0;
             handler.PlatformView.BorderStyle = UIKit.UITextBorderStyle.None;
@@ -35,7 +31,7 @@ public static class MauiProgram
 
         Microsoft.Maui.Handlers.PickerHandler.Mapper.AppendToMapping("Borderless", (handler, view) =>
         {
-#if IOS
+#if MACCATALYST
             handler.PlatformView.BackgroundColor = UIKit.UIColor.Clear;
             handler.PlatformView.Layer.BorderWidth = 0;
             handler.PlatformView.BorderStyle = UIKit.UITextBorderStyle.None;

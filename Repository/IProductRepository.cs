@@ -1,7 +1,8 @@
-﻿namespace HeThongQuanLy.Repository;
+﻿using WindowsApp.Models;
+
+namespace WindowsApp.Repository;
 
 public interface IProductRepository
 {
-        Task<List<Models.Product>> GetAllAsync();
-        Task<Models.Product?> GetByIdAsync(int id);
+    Task<Product?> GetByIdAsync(int id);
 }

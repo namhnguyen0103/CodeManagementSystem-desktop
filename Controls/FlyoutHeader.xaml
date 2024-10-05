@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WindowsApp.Controls.FlyoutHeader">
+    
+    <VerticalStackLayout>
+        <Image Source="user.png" HeightRequest="55"/>
+        <Label Text="Admin Name" TextColor="#3D52A0" FontFamily="Inter-SemiBold" FontSize="20" HorizontalOptions="Center"/>
+    </VerticalStackLayout>
+</ContentView>

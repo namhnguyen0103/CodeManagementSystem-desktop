@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <_CodesignBundle Include="HeThongQuanLy.app">
+    <_CodesignBundle Include="WindowsApp.app">
       <CodesignSigningKey></CodesignSigningKey>
       <CodesignEntitlements></CodesignEntitlements>
       <CodesignUseSecureTimestamp></CodesignUseSecureTimestamp>
@@ -12,7 +12,7 @@
       <CodesignDisableTimestamp>true</CodesignDisableTimestamp>
       <CodesignKeychain></CodesignKeychain>
       <CodesignUseHardenedRuntime></CodesignUseHardenedRuntime>
-      <SourceProjectPath>/Users/nguyenhoangnam/Desktop/ThucTap/Project/He Thong Quan Ly/HeThongQuanLy</SourceProjectPath>
+      <SourceProjectPath>/Users/nguyenhoangnam/Desktop/ThucTap/Project/WindowsApp/WindowsApp</SourceProjectPath>
     </_CodesignBundle>
   </ItemGroup>
 </Project>

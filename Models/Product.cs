@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace HeThongQuanLy.Models;
+namespace WindowsApp.Models;
 
 public class Product : ObservableObject, INotifyPropertyChanged 
 {
@@ -62,3 +62,4 @@ public class Product : ObservableObject, INotifyPropertyChanged
         } 
     } 
 }
+

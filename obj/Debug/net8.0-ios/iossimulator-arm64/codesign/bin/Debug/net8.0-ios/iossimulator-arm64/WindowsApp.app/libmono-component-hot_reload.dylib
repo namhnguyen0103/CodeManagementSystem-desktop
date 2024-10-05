@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - /Users/nguyenhoangnam/Desktop/ThucTap/Project/WindowsApp/WindowsApp/bin/Debug/net8.0-ios/iossimulator-arm64/WindowsApp.app/libmono-component-hot_reload.dylib

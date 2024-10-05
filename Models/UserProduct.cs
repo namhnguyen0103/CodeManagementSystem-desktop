@@ -2,7 +2,7 @@
 using System.ComponentModel;
 
 
-namespace HeThongQuanLy.Models;
+namespace WindowsApp.Models;
 
 public class UserProduct : ObservableObject, INotifyPropertyChanged
 {    
@@ -22,10 +22,10 @@ public class UserProduct : ObservableObject, INotifyPropertyChanged
 
     public int Product_id
     {
-        get => _product_id;
+        get => _id;
         set 
         {
-            SetProperty(ref _product_id, value);
+            SetProperty(ref _id, value);
             RaisePropertyChanged(nameof(ProductName));
         }
     }
@@ -126,3 +126,4 @@ public class UserProduct : ObservableObject, INotifyPropertyChanged
         } 
     } 
 }
+

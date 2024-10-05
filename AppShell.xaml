@@ -1,42 +1,111 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
-    x:Class="HeThongQuanLy.AppShell"
+    x:Name="shell"
+    x:Class="WindowsApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:views="clr-namespace:HeThongQuanLy.Views"
-    Title="HeThongQuanLy"
-    Shell.TabBarForegroundColor="CornflowerBlue">
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:local="clr-namespace:WindowsApp"
+    xmlns:views="clr-namespace:WindowsApp.Views"
+    Shell.FlyoutBehavior="Locked"
+    FlyoutBackgroundColor="#7091E6"
+    FlyoutWidth="222"
+    Title="WindowsApp">
+    
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Border WidthRequest="190" HeightRequest="100" StrokeThickness="0" Margin="0,20,0,30" HorizontalOptions="Center">
+                <VerticalStackLayout Spacing="5">
+                    <Image Source="user.png"/>
+                    <Label Text="Admin Name" FontFamily="Inter-SemiBold" FontSize="20" HorizontalOptions="Center" TextColor="#3D52A0"/>
+                </VerticalStackLayout>
+            </Border>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+
+    <Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+            <Button Text="Logout" Clicked="LogoutButtonClicked" Margin="0,0,0,20" BackgroundColor="#3D52A0" TextColor="White" FontFamily="Inter-SemiBold" FontSize="20" CornerRadius="3" HeightRequest="63" WidthRequest="157">
+            </Button>
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>
+
+    <Shell.ItemTemplate>
+        <DataTemplate x:DataType="FlyoutItem">
+            <Border HeightRequest="70" StrokeThickness="0" Padding="17,8,17,8" BackgroundColor="Transparent">
+                
+                <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter TargetName="InnerBorder"
+                                                Property="Border.BackgroundColor"
+                                                Value="#3D52A0"/>
+                                        <Setter TargetName="FlyoutLabel"
+                                                Property="Label.TextColor"
+                                                Value="#EDE8F5" />
+                                        <Setter TargetName="FlyoutIcon"
+                                                Property="Image.Source"
+                                                Value="{Binding Title, StringFormat='{0}_selected.png'}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                
+                <Border x:Name="InnerBorder" StrokeShape="RoundRectangle 5,5,5,5" StrokeThickness="0" BackgroundColor="Transparent" Padding="20,0,0,0">
+                    <Grid ColumnDefinitions="Auto, *" ColumnSpacing="7" > 
+                        <Image x:Name="FlyoutIcon" Source="{Binding FlyoutIcon}" Background="Transparent">
+                        </Image>
+                        <Label x:Name="FlyoutLabel" Grid.Column="1" Text="{Binding Title}" VerticalOptions="Center" FontSize="20" FontFamily="Inter-SemiBold" TextColor="#3D52A0" />
+                    </Grid>
+                </Border>
+            </Border>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <Shell.FlyoutHeader>
+        <DataTemplate>
+            <VerticalStackLayout>
+                <Image Source="user.png" HeightRequest="55"/>
+                <Label Text="Admin Name" TextColor="#3D52A0" FontFamily="Inter-SemiBold" FontSize="20" HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+        </DataTemplate>
+    </Shell.FlyoutHeader>
 
     <ShellContent
         ContentTemplate="{DataTemplate views:LoginPage}"
-        Route="LoginPage" />
+        Route="LoginPage"
+        FlyoutItemIsVisible="False"/>
 
-    <ShellContent
-        ContentTemplate="{DataTemplate views:SignUpPage}"
-        Route="SignUpPage"/>
-
-
-    <TabBar Route="HomePage" > 
-        <ShellContent
-            ContentTemplate="{DataTemplate views:HomePage}"
-            Icon="home_icon.png"
-            Route="Main"
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" Route="HomePage">
+        <ShellContent 
+            Title="Search"
+            ContentTemplate="{DataTemplate views:SearchPage}"
+            Icon="search.png"
+            Route="Search"
         />
         <ShellContent 
-            ContentTemplate="{DataTemplate views:UserProductPage}"
-            Icon="tote_icon.png"
-            
+            Title="Request"
+            ContentTemplate="{DataTemplate views:RequestPage}"
+            Icon="request.png"
+            Route="Request"
         />
         <ShellContent 
-            ContentTemplate="{DataTemplate views:ShoppingCartPage}"
-            Icon="cart_icon.png"
-            
+            Title="Admin"
+            ContentTemplate="{DataTemplate views:AdminPage}"
+            Icon="admin.png"
+            Route="Admin"
         />
         <ShellContent 
-            ContentTemplate="{DataTemplate views:SettingsPage}"
-            Icon="user_icon.png"
-            
+            Title="Settings"
+            ContentTemplate="{DataTemplate views:SettingPage}"
+            Icon="settings.png"
+            Route="Settings"
         />
-    </TabBar>
+    </FlyoutItem>
 
+    
 </Shell>

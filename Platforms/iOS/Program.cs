@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace HeThongQuanLy;
+namespace WindowsApp;
 
 public class Program
 {

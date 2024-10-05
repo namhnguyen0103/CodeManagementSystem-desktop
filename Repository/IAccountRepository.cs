@@ -1,8 +1,10 @@
-﻿using HeThongQuanLy.Models;
+﻿using WindowsApp.Models;
 
-namespace HeThongQuanLy.Repository;
+namespace WindowsApp.Repository;
 
 public interface IAccountRepository
 {
-    Task<bool?> VerifyLogin(Models.LoginRequestModel loginInfo);
+    Task<bool?> VerifyLoginAsync(Models.LoginRequestModel loginInfo);
+    Task<List<Customer>> GetCustomersAsync();
+    Task<List<Admin>> GetAdminsAsync();
 }

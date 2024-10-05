@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:data="clr-namespace:WindowsApp.Models"
+             xmlns:vm="clr-namespace:WindowsApp.ViewModels"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             xmlns:cvt="clr-namespace:WindowsApp.Converters"
+             x:Class="WindowsApp.Views.AdminPage"
+             Title="AdminPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <cvt:TypeAdminConverter x:Key="TypeAdminConverter"/>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto,20,Auto,10,Auto,20,Auto,Auto,*" Margin="30,60,30,60">
+        <Label Grid.Row="0" Text="Admins" FontSize="32" FontFamily="Inter-Medium" />
+        <Label Grid.Row="2" Text="Admin Search" FontSize="24" FontFamily="Poppins-Medium" />
+
+        <Grid Grid.Row="4" ColumnDefinitions="5*,*,*" ColumnSpacing="10">
+            <Border Grid.Column="0" StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="50" Padding="20,0,20,0">
+                <Entry Placeholder="Search an admin" FontFamily="Poppins-Light" FontSize="15" HeightRequest="40"/>
+            </Border>
+            <Button Grid.Column="1" Text="Search" BackgroundColor="#3D52A0" CornerRadius="3" HeightRequest="40" VerticalOptions="Center" />
+            <Button Grid.Column="2" Text="Create new admin" CornerRadius="3" Command="{Binding NewAdmin_Clicked}" BackgroundColor="#3D52A0" HeightRequest="40" VerticalOptions="Center" />
+        </Grid>
+
+        <Grid Grid.Row="6" ColumnDefinitions="2*, 2*, 2*, *" VerticalOptions="Center" HeightRequest="30">
+            <Label Grid.Column="0" Text="Admin Name" FontFamily="Poppins-SemiBold" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Grid.Column="1" Text="Admin ID" FontFamily="Poppins-SemiBold" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Grid.Column="2" Text="Email" FontFamily="Poppins-SemiBold" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Grid.Column="3" Text="Type of admin" FontFamily="Poppins-SemiBold" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>                             
+        </Grid>
+
+        <Border Grid.Row="7" HeightRequest="1" BackgroundColor="#7091E6" StrokeThickness="0"/>
+        <ListView Grid.Row="8" ItemsSource="{Binding AdminList}" ios:ListView.SeparatorStyle="FullWidth">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell x:DataType="data:Admin">
+                        <Grid ColumnDefinitions="2*, 2*, 2*, *">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AdminPageViewModel}}, Path=Item_Select}" CommandParameter="{Binding}" />
+                            </Grid.GestureRecognizers>
+
+                            <Label Grid.Column="0" Text="{Binding Name}" FontFamily="Inter-Regular" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Grid.Column="1" Text="{Binding AdminID}" FontFamily="Inter-Regular" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Grid.Column="2" Text="{Binding Email}" FontFamily="Inter-Regular" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Grid.Column="3" Text="{Binding SuperAdmin, Converter={StaticResource TypeAdminConverter}}" FontFamily="Inter-Regular" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>                             
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <ActivityIndicator Grid.Row="8" IsRunning="{Binding IsBusy}" Color="#3D52A0"/>
+
+    </Grid>
+</ContentPage>

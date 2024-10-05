@@ -1,12 +1,14 @@
-﻿namespace HeThongQuanLy;
+﻿namespace WindowsApp;
 
 public partial class AppShell : Shell
 {
 	public AppShell()
 	{
 		InitializeComponent();
-		Routing.RegisterRoute(nameof(Views.ProductDetailPage), typeof(Views.ProductDetailPage));
-		Routing.RegisterRoute(nameof(Views.UserProductDetailPage), typeof(Views.UserProductDetailPage));
-		Routing.RegisterRoute(nameof(Views.CheckoutPage), typeof(Views.CheckoutPage));
+	}
+
+	public async void LogoutButtonClicked(object sender, EventArgs args)
+	{
+		await Shell.Current.GoToAsync("///LoginPage");
 	}
 }

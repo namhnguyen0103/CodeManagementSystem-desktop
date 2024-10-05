@@ -1,65 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HeThongQuanLy.Views.LoginPage"
-             xmlns:vm="clr-namespace:HeThongQuanLy.ViewModels"
-             Title="Login"
+             x:Class="WindowsApp.Views.LoginPage"
+             Title="LoginPage"
+             Shell.FlyoutBehavior="Disabled"
              Shell.NavBarIsVisible="False"
-             Shell.TabBarIsVisible="False">
-    <ContentPage.BindingContext>
-        <vm:LoginPageViewModel/>
-    </ContentPage.BindingContext>
-    
-    <Grid RowDefinitions="*, Auto, *, Auto, 15, Auto, *, Auto" Margin="50,60,50,60">
+             BackgroundColor="#7091E6">
 
-        <StackLayout Grid.Row="1" Orientation="Vertical" VerticalOptions="Center">
-            <Image Source="login.png"/>
-            <!-- <Label Text="{Binding Heading}" FontFamily="Mulish-ExtraBold" TextColor="#252525" FontSize="24" HorizontalTextAlignment="Center"/>
-            <Label Text="{Binding Subheading}" FontFamily="Mulish-Light" TextColor="#252525" FontSize="14" HorizontalTextAlignment="Center"/> -->
-        </StackLayout>
-        
-        <StackLayout Grid.Row="3" Spacing="20">
-            <Frame HeightRequest="50" BackgroundColor="#F3F3F3" CornerRadius="10" BorderColor="Transparent">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Entry Grid.Column="0" Text="{Binding Id}" Placeholder="{Binding UsernameEntry}" ClearButtonVisibility="WhileEditing" HeightRequest="40" TextColor="#7A7A7A" PlaceholderColor="#7A7A7A" FontFamily="Mulish-Regular" FontSize="14"/>
-                    <Image Grid.Column="1" Source="user.png" HeightRequest="24" WidthRequest="24"/>
-                </Grid>
-            </Frame>
-            <Frame HeightRequest="50" BackgroundColor="#F3F3F3" CornerRadius="10" BorderColor="#F3F3F3">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Entry Grid.Column="0" Text="{Binding Account_password}" Placeholder="{Binding PasswordEntry}" ClearButtonVisibility="WhileEditing" IsPassword="True" HeightRequest="40" TextColor="#7A7A7A" PlaceholderColor="#7A7A7A" FontFamily="Mulish-Regular" FontSize="14"/>
-                    <Image Grid.Column="1" Source="lock.png" HeightRequest="24" WidthRequest="24"/>
-                </Grid>
-            </Frame>
-        </StackLayout>
-
-        <HorizontalStackLayout Grid.Row="5" Spacing="3">
-            <CheckBox MinimumHeightRequest="5" MinimumWidthRequest="5" IsChecked="False" AnchorX="47" Color="CornflowerBlue"/>
-            <Label Text="{Binding CheckboxText}" FontSize="12" TextColor="#252525" FontFamily="Mulish-Regular" VerticalTextAlignment="Center"/>
-        </HorizontalStackLayout>
-        
-        <VerticalStackLayout Grid.Row="7" Spacing="12">
-            <Button Text="{Binding ButtonText}" Command="{Binding LoginButton_Command}"  FontSize="20" FontFamily="Mulish-SemiBold" TextColor="#FCFCFC" BackgroundColor="CornflowerBlue" HeightRequest="50" CornerRadius="10"/>
-            <HorizontalStackLayout HorizontalOptions="Center" Spacing="3">
-                <Label Text="{Binding RegisterNew}" FontSize="13" FontFamily="Mulish-Regular"/>
-                <Label Text="{Binding RegisterButton}" TextColor="CornflowerBlue" FontSize="13" FontFamily="Mulish-Bold">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding RegisterButton_Command}"/>
-                    </Label.GestureRecognizers>
-                </Label>
-            </HorizontalStackLayout>
-        </VerticalStackLayout>
-        
-
-        
-    </Grid>
-
+    <Border StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="520" WidthRequest="710" BackgroundColor="White" StrokeThickness="0">
+        <Grid RowDefinitions="Auto,Auto,30,*">
+            <Label Grid.Row="0" Text="Login" HeightRequest="150" FontFamily="Inter-SemiBold" FontSize="36" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <VerticalStackLayout Grid.Row="1" Spacing="30">
+                <Border HeightRequest="65" WidthRequest="495" Padding="20,0,20,0" Stroke="Black">
+                    <Entry Placeholder="Username" Text="{Binding Id}" FontFamily="Inter-Regular" FontSize="20"/>
+                </Border>
+                <Border HeightRequest="65" WidthRequest="495" Padding="20,0,20,0" Stroke="Black">
+                    <Entry Placeholder="Password" Text="{Binding Password}" IsPassword="True" FontFamily="Inter-Regular" FontSize="20"/>
+                </Border>
+            </VerticalStackLayout>
+            <Button Grid.Row="3" Text="Login" Command="{Binding Login_Command}" CornerRadius="3" FontFamily="Inter-Bold" FontSize="20" HeightRequest="65" WidthRequest="195" VerticalOptions="Start" BackgroundColor="#3D52A0"/>
+        </Grid>
+    </Border>
 </ContentPage>

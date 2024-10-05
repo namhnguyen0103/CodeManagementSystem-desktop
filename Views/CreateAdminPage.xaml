@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WindowsApp.Views.CreateAdminPage"
+             Title="CreateAdminPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+
+<Grid RowDefinitions="Auto,20,Auto,30,Auto,50,Auto" Margin="30,60,30,60">
+        <Label Grid.Row="0" Text="Admins" FontSize="32" FontFamily="Inter-Medium" />
+        <HorizontalStackLayout Spacing="10" Grid.Row="2">
+            <Image Source="chevron_left.png" WidthRequest="27" VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BackButton_Tapped}" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="New Account Information" FontSize="24" FontFamily="Poppins-Medium" VerticalOptions="Center"/>
+        </HorizontalStackLayout>
+        <Grid Grid.Row="4" ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="20" RowSpacing="30">
+            <VerticalStackLayout Grid.Column="0" Grid.Row="0" Spacing="10">
+                <HorizontalStackLayout>
+                    <Label Text="* " VerticalOptions="Center" FontFamily="Poppins-Medium" TextColor="#FF1951" FontSize="20"/>                    
+                    <Label Text="Account ID" VerticalOptions="Center" FontFamily="Poppins-Medium" FontSize="20"/>
+                </HorizontalStackLayout>
+                <Border StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="50" Padding="20,0,20,0">
+                    <Entry Placeholder="Enter Account ID" FontFamily="Poppins-Regular" FontSize="20" VerticalOptions="Center"/>
+                </Border>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="1" Grid.Row="0" Spacing="10">
+                <HorizontalStackLayout>
+                    <Label Text="* " VerticalOptions="Center" FontFamily="Poppins-Medium" TextColor="#FF1951" FontSize="20"/>                    
+                    <Label Text="Type of admin" VerticalOptions="Center" FontFamily="Poppins-Medium" FontSize="20"/>
+                </HorizontalStackLayout>
+                <Border StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="50" Padding="20,0,20,0" WidthRequest="300" HorizontalOptions="Start">
+                    <Picker FontFamily="Poppins-Regular" ItemsSource="{Binding AdminType}" FontSize="20" VerticalOptions="Center">
+                    </Picker>
+                </Border>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="0" Grid.Row="1" Spacing="10">
+                <HorizontalStackLayout>
+                    <Label Text="* " VerticalOptions="Center" FontFamily="Poppins-Medium" TextColor="#FF1951" FontSize="20"/>
+                    <Label Text="Admin Name" VerticalOptions="Center" FontFamily="Poppins-Medium" FontSize="20"/>
+                </HorizontalStackLayout>
+                <Border StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="50" Padding="20,0,20,0">
+                    <Entry Placeholder="Enter Admin Name" FontFamily="Poppins-Regular" FontSize="20" VerticalOptions="Center"/>
+                </Border>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="1" Grid.Row="1" Spacing="10">
+                <Label Text="Email" VerticalOptions="Center" FontFamily="Poppins-Medium" FontSize="20"/>
+                <Border StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="50" Padding="20,0,20,0">
+                    <Entry Placeholder="Enter Email" FontFamily="Poppins-Regular" FontSize="20" VerticalOptions="Center"/>
+                </Border>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="0" Grid.Row="2" Spacing="10">
+                <HorizontalStackLayout>
+                    <Label Text="* " VerticalOptions="Center" FontFamily="Poppins-Medium" TextColor="#FF1951" FontSize="20"/>
+                    <Label Text="Password" VerticalOptions="Center" FontFamily="Poppins-Medium" FontSize="20"/>
+                </HorizontalStackLayout>
+                <Border StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="50" Padding="20,0,20,0">
+                    <Entry Placeholder="Enter a password" FontFamily="Poppins-Regular" FontSize="20" VerticalOptions="Center"/>
+                </Border>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="1" Grid.Row="2" Spacing="10">
+                <HorizontalStackLayout>
+                    <Label Text="* " VerticalOptions="Center" FontFamily="Poppins-Medium" TextColor="#FF1951" FontSize="20"/>
+                    <Label Text="Verify Password" VerticalOptions="Center" FontFamily="Poppins-Medium" FontSize="20"/>
+                </HorizontalStackLayout>
+                <Border StrokeShape="RoundRectangle 3,3,3,3" HeightRequest="50" Padding="20,0,20,0">
+                    <Entry Placeholder="Re-enter password" FontFamily="Poppins-Regular" FontSize="20" VerticalOptions="Center"/>
+                </Border>
+            </VerticalStackLayout>
+        </Grid>
+        <Button Grid.Row="6" Text="Create new account" Command="{Binding RenewButton_Tapped}" CommandParameter="{Binding Request}" FontFamily="Inter-SemiBold" FontSize="20" WidthRequest="320" HeightRequest="65" HorizontalOptions="Center" CornerRadius="3" BackgroundColor="#3D52A0">
+            
+        </Button>
+    </Grid>
+</ContentPage>

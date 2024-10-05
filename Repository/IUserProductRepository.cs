@@ -1,10 +1,8 @@
-﻿using HeThongQuanLy.Models;
+﻿using WindowsApp.Models;
 
-namespace HeThongQuanLy.Repository;
+namespace WindowsApp.Repository;
 
 public interface IUserProductRepository
 {
-        Task<List<UserProduct>> GetByUserIdAsync(string user_id);
-        Task<UserProduct?> GetByIdAsync(int id);
-        Task<UserProduct?> CreateAsync(Models.CartItem cartItem);
+    Task<List<UserProduct>> GetByUserIdAsync(string user_id);
 }
