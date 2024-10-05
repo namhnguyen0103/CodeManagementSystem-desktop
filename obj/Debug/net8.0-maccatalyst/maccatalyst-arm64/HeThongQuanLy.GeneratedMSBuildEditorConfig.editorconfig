@@ -1,0 +1,113 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0-maccatalyst
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = HeThongQuanLy
+build_property.ProjectDir = /Users/nguyenhoangnam/Desktop/ThucTap/Project/He Thong Quan Ly/HeThongQuanLy/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/He Thong Quan Ly/HeThongQuanLy/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HeThongQuanLy.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/He Thong Quan Ly/HeThongQuanLy/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HeThongQuanLy.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/He Thong Quan Ly/HeThongQuanLy/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HeThongQuanLy.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Colors.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/He Thong Quan Ly/HeThongQuanLy/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HeThongQuanLy.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Styles.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/He Thong Quan Ly/HeThongQuanLy/Views/AddProductPopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HeThongQuanLy.Views.AddProductPopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/AddProductPopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/AddProductPopup.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/He Thong Quan Ly/HeThongQuanLy/Views/CheckoutPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HeThongQuanLy.Views.CheckoutPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/CheckoutPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/CheckoutPage.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/He Thong Quan Ly/HeThongQuanLy/Views/HomePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HeThongQuanLy.Views.HomePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/HomePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/HomePage.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/He Thong Quan Ly/HeThongQuanLy/Views/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HeThongQuanLy.Views.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/LoginPage.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/He Thong Quan Ly/HeThongQuanLy/Views/LoginPopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HeThongQuanLy.Views.LoginPopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/LoginPopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/LoginPopup.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/He Thong Quan Ly/HeThongQuanLy/Views/ProductDetailPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HeThongQuanLy.Views.ProductDetailPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/ProductDetailPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/ProductDetailPage.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/He Thong Quan Ly/HeThongQuanLy/Views/RenewPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HeThongQuanLy.Views.RenewPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/RenewPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/RenewPage.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/He Thong Quan Ly/HeThongQuanLy/Views/SettingsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HeThongQuanLy.Views.SettingsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/SettingsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/SettingsPage.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/He Thong Quan Ly/HeThongQuanLy/Views/ShoppingCartPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HeThongQuanLy.Views.ShoppingCartPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/ShoppingCartPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/ShoppingCartPage.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/He Thong Quan Ly/HeThongQuanLy/Views/SignUpPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HeThongQuanLy.Views.SignUpPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/SignUpPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/SignUpPage.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/He Thong Quan Ly/HeThongQuanLy/Views/UserProductDetailPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HeThongQuanLy.Views.UserProductDetailPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/UserProductDetailPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/UserProductDetailPage.xaml
+
+[/Users/nguyenhoangnam/Desktop/ThucTap/Project/He Thong Quan Ly/HeThongQuanLy/Views/UserProductPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HeThongQuanLy.Views.UserProductPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/UserProductPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/UserProductPage.xaml

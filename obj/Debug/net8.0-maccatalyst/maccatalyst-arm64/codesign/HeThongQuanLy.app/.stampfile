@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - --entitlements /Users/nguyenhoangnam/Desktop/ThucTap/Project/He Thong Quan Ly/HeThongQuanLy/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/Entitlements.xcent /Users/nguyenhoangnam/Desktop/ThucTap/Project/He Thong Quan Ly/HeThongQuanLy/bin/Debug/net8.0-maccatalyst/maccatalyst-arm64/HeThongQuanLy.app
