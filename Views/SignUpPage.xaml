@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HeThongQuanLy.Views.SignUpPage"
+             Title="SignUpPage"
+             Shell.NavBarIsVisible="False">
+    
+    <Grid RowDefinitions="*, Auto, *, Auto, 15, Auto, *, Auto" Margin="50,60,60,50">
+        <StackLayout Grid.Row="1" Orientation="Vertical">
+            <Image Source="register2.png" HorizontalOptions="Center"/>
+            <!-- <Label Text="Get Started" FontFamily="Mulish-ExtraBold" TextColor="#252525" FontSize="24" HorizontalTextAlignment="Center"/> -->
+            <!-- <Label Text="by creating a free account" FontFamily="Mulish-Light" TextColor="#252525" FontSize="14" HorizontalTextAlignment="Center"/> -->
+        </StackLayout>
+        
+        <StackLayout Grid.Row="3" Spacing="20">
+            <Frame HeightRequest="50" BackgroundColor="#F3F3F3" CornerRadius="10" BorderColor="Transparent">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Entry Grid.Column="0" Placeholder="Full name" HeightRequest="40" TextColor="#7A7A7A" PlaceholderColor="#7A7A7A" FontFamily="Mulish-Regular" FontSize="14"/>
+                    <Image Grid.Column="1" Source="user.png" HeightRequest="24" WidthRequest="24"/>
+                </Grid>
+            </Frame>
+            <Frame HeightRequest="50" BackgroundColor="#F3F3F3" CornerRadius="10" BorderColor="Transparent">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Entry Grid.Column="0" Placeholder="Valid email" HeightRequest="40" TextColor="#7A7A7A" PlaceholderColor="#7A7A7A" FontFamily="Mulish-Regular" FontSize="14"/>
+                    <Image Grid.Column="1" Source="mail.png" HeightRequest="24" WidthRequest="24"/>
+                </Grid>
+            </Frame>
+            <Frame HeightRequest="50" BackgroundColor="#F3F3F3" CornerRadius="10" BorderColor="Transparent">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Entry Grid.Column="0" Placeholder="Account ID" HeightRequest="40" TextColor="#7A7A7A" PlaceholderColor="#7A7A7A" FontFamily="Mulish-Regular" FontSize="14"/>
+                    <Image Grid.Column="1" Source="smartphone.png" HeightRequest="24" WidthRequest="24"/>
+                </Grid>
+            </Frame>
+            <Frame HeightRequest="50" BackgroundColor="#F3F3F3" CornerRadius="10" BorderColor="#F3F3F3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Entry Grid.Column="0" Placeholder="Strong Password" HeightRequest="40" TextColor="#7A7A7A" PlaceholderColor="#7A7A7A" FontFamily="Mulish-Regular" FontSize="14"/>
+                    <Image Grid.Column="1" Source="lock.png" HeightRequest="24" WidthRequest="24"/>
+                </Grid>
+            </Frame>
+            <Frame HeightRequest="50" BackgroundColor="#F3F3F3" CornerRadius="10" BorderColor="#F3F3F3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Entry Grid.Column="0" Placeholder="Verify Password" HeightRequest="40" TextColor="#7A7A7A" PlaceholderColor="#7A7A7A" FontFamily="Mulish-Regular" FontSize="14"/>
+                    <Image Grid.Column="1" Source="lock.png" HeightRequest="24" WidthRequest="24"/>
+                </Grid>
+            </Frame>
+        </StackLayout>
+
+        <HorizontalStackLayout Grid.Row="5" Spacing="3">
+            <CheckBox MinimumHeightRequest="5" MinimumWidthRequest="5" IsChecked="False" AnchorX="47" Color="#7091E6"/>
+            <Label Text="Agree to our Terms and Conditions" FontSize="12" TextColor="#252525" FontFamily="Mulish-Regular" VerticalTextAlignment="Center"/>
+        </HorizontalStackLayout>
+
+        <VerticalStackLayout Grid.Row="7" Spacing="12">
+            <Button Text="Sign up"  FontSize="20" FontFamily="Mulish-SemiBold" TextColor="#FCFCFC" BackgroundColor="#7091E6" HeightRequest="50" CornerRadius="10"/>
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label Text="Already a member? " FontSize="13" FontFamily="Mulish-Regular"/>
+                <Label Text="Log in" TextColor="#7091E6" FontSize="13" FontFamily="Mulish-Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Login_Clicked"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+    </Grid>
+
+</ContentPage>

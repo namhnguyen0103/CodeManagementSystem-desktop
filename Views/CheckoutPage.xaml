@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:data="clr-namespace:HeThongQuanLy.Models"
+             xmlns:vm="clr-namespace:HeThongQuanLy.ViewModels"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             x:Class="HeThongQuanLy.Views.CheckoutPage"
+             Title="CheckoutPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+    
+    <Grid RowDefinitions="Auto,20,Auto,*,Auto" Margin="0,70,0,0">
+        <Grid Grid.Row="0" ColumnDefinitions="Auto, *" ColumnSpacing="5" Padding="20,0,20,0">
+            <Image Grid.Column="0" Source="chevron_left.png" VerticalOptions="Center"> 
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BackButton_Clicked}"/>
+                </Image.GestureRecognizers>
+            </Image> 
+            <Label Grid.Column="1" FontFamily="Mulish-Bold" FontSize="24" Text="Checkout" VerticalOptions="Center"/>
+        </Grid>
+        <BoxView Grid.Row="2" HeightRequest="0.5" HorizontalOptions="Fill" Color="#DADADA"/>
+        <ScrollView Grid.Row="3">
+            <Grid RowDefinitions="20,Auto,10,Auto,30,Auto,50,Auto">
+                <HorizontalStackLayout Grid.Row="1" Padding="20,0,20,0" Spacing="5">
+                    <Label Text="Order Total:" FontFamily="Mulish-Bold" FontSize="16" VerticalOptions="End"/>
+                    <Label Text="{Binding OrderTotal, StringFormat='${0:F2}'}" FontFamily="Mulish-SemiBold" FontSize="20" VerticalOptions="End"/>
+                </HorizontalStackLayout>
+                <Border Grid.Row="3" StrokeShape="RoundRectangle 5,5,5,5" StrokeThickness="0" Margin="20,5,20,5" BackgroundColor="White">
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Radius="5" Opacity="0.2" Offset="0,3"/>
+                    </Border.Shadow>
+                    <StackLayout BindableLayout.ItemsSource="{Binding SelectedItems}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate x:DataType="data:CartItem">
+                                <Grid RowDefinitions="Auto, 5, Auto" ColumnDefinitions="60,5,*" Margin="5,5,20,5">
+                                    <Image Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Source="image_unavailable.png"/>
+                                    <Label Grid.Row="0" Grid.Column="2" MaxLines="1" LineBreakMode="TailTruncation" Text="{Binding Product.Product_name}"/>
+                                    <Grid Grid.Row="2" Grid.Column="2" ColumnDefinitions="*,*">
+                                        <Label Grid.Column="0" Text="{Binding Product.PricePerMonth, StringFormat='${0:F2}/month'}" />
+                                        <Label Grid.Column="1" Text="{Binding Duration, StringFormat='{0} months'}" HorizontalTextAlignment="End"/>
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                </Border>
+
+                <VerticalStackLayout Grid.Row="5" Padding="20,0,20,0" Spacing="20">
+                    
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Card number" FontFamily="Mulish-Bold" FontSize="15"/>
+                        <Frame HeightRequest="40" BackgroundColor="#F3F3F3" CornerRadius="10" BorderColor="#F3F3F3">
+                            <Entry Placeholder="Card number" HeightRequest="40" TextColor="#7A7A7A" PlaceholderColor="#7A7A7A" FontFamily="Mulish-Regular" FontSize="14"/>
+                        </Frame>
+                    </VerticalStackLayout>
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="20">
+                        <VerticalStackLayout Grid.Column="0" Spacing="10">
+                            <Label Text="Expiration Date" FontFamily="Mulish-Bold" FontSize="15"/>
+                            <Frame HeightRequest="40" BackgroundColor="#F3F3F3" CornerRadius="10" BorderColor="#F3F3F3">
+                                <Entry Placeholder="MM/YY" HeightRequest="40" TextColor="#7A7A7A" PlaceholderColor="#7A7A7A" FontFamily="Mulish-Regular" FontSize="14"/>
+                            </Frame>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Grid.Column="1" Spacing="10">
+                            <Label Text="Security code (CVV)" FontFamily="Mulish-Bold" FontSize="15"/>
+                            <Frame HeightRequest="40" BackgroundColor="#F3F3F3" CornerRadius="10" BorderColor="#F3F3F3">
+                                <Entry Placeholder="3-4 digit code" HeightRequest="40" TextColor="#7A7A7A" PlaceholderColor="#7A7A7A" FontFamily="Mulish-Regular" FontSize="14"/>
+                            </Frame>
+                        </VerticalStackLayout>
+                    </Grid>
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Name on card" FontFamily="Mulish-Bold" FontSize="15"/>
+                        <Frame HeightRequest="40" BackgroundColor="#F3F3F3" CornerRadius="10" BorderColor="#F3F3F3">
+                            <Entry Placeholder="First and last name" HeightRequest="40" TextColor="#7A7A7A" PlaceholderColor="#7A7A7A" FontFamily="Mulish-Regular" FontSize="14"/>
+                        </Frame>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Grid>
+        </ScrollView>
+        <Button Grid.Row="4" Text="Place your order" Command="{Binding CheckoutButton_Clicked}" BackgroundColor="CornflowerBlue" FontFamily="Mulish-Bold" FontSize="13" TextColor="White" HeightRequest="39" Margin="20,0,20,0"/>
+        <ActivityIndicator Grid.Row="0" Grid.RowSpan="5" IsRunning="{Binding IsBusy}" Color="CornflowerBlue" BackgroundColor="#80FFFFFF"/>
+
+    
+    </Grid>
+</ContentPage>

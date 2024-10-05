@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="HeThongQuanLy.Views.AddProductPopup"
+               Color="White">
+
+    <Grid RowDefinitions="Auto,10, Auto, 30, Auto, 10, Auto, 20" Margin="10">
+        <Label Text="Renew Product" HorizontalTextAlignment="Center"/>
+        <Border Grid.Row="2" Padding="20,0,10,0">
+            <Picker Title="Select a new duration" WidthRequest="200" VerticalOptions="Center" FontFamily="Mulish-SemiBold" FontSize="13">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                    <x:String>1 month</x:String>
+                    <x:String>3 months</x:String>
+                    <x:String>6 months</x:String>
+                    <x:String>12 months</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </Border>
+        <Button Grid.Row="4" Text="Renew" BackgroundColor="CornflowerBlue" CornerRadius="3" Clicked="OnRenewButtonClicked"/>
+        <Border Grid.Row="6" StrokeShape="RoundRectangle 3,3,3,3" Stroke="CornflowerBlue">
+            <Button Text="Cancel" BorderColor="CornflowerBlue" Clicked="OnCancelButtonClicked" BackgroundColor="Transparent" TextColor="CornflowerBlue"/>
+        </Border>
+    </Grid>
+    
+</toolkit:Popup>

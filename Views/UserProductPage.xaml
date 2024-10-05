@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:data="clr-namespace:HeThongQuanLy.Models"
+             xmlns:vm="clr-namespace:HeThongQuanLy.ViewModels"
+             xmlns:local="clr-namespace:HeThongQuanLy"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             xmlns:cvt="clr-namespace:HeThongQuanLy.Converters"
+             x:Class="HeThongQuanLy.Views.UserProductPage"
+             Title="PurchasedProductPage"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <cvt:DateToStatusConverter x:Key="DateToStatusConverter"/>
+        <cvt:DateToColorConverter x:Key="DateToColorConverter"/>
+    </ContentPage.Resources>
+
+     <Grid RowDefinitions="Auto, 5, Auto, 10, *" Margin="0,70,0,60">
+    
+        <Label Grid.Row="0" Text="{Binding Heading}" FontSize="24" FontFamily="Mulish-Bold" Padding="20,0,20,0"/>
+
+        <Grid Grid.Row="2" ColumnDefinitions="*, Auto" Margin="10,0,10,0">
+            <SearchBar Grid.Column="0" ios:SearchBar.SearchBarStyle="Minimal" Placeholder="{Binding Searchbar_Placeholder}" HeightRequest="36"/>
+            <Image Grid.Column="1" Source="tuner.png"/>
+        </Grid>  
+
+        <Label Grid.Row="3" Grid.RowSpan="2" Text="No products" FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontFamily="Mulish-ExtraLightItalic" IsVisible="{Binding IsEmpty}"/>
+
+        <ListView Grid.Row="4" ItemsSource="{Binding SoftwareProducts}" IsPullToRefreshEnabled="True" RefreshCommand="{Binding PullToRefresh}" IsRefreshing="{Binding IsRefreshing}" ios:ListView.RowAnimationsEnabled="false" ios:ListView.SeparatorStyle="FullWidth" HasUnevenRows="True" BackgroundColor="Transparent" SelectionMode="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell x:DataType="data:UserProduct">
+                        <Grid ColumnDefinitions="*,Auto" RowDefinitions="*, Auto" Padding="20,10,20,10">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:UserProductPageViewModel}}, Path=Item_Select}" CommandParameter="{Binding}"/>
+                            </Grid.GestureRecognizers>
+
+                            <Grid Grid.Column="0" RowDefinitions="*,Auto" RowSpacing="7">
+                                <Label Grid.Row="0" Text="{Binding ProductName}" FontSize="14" FontFamily="Mulish-Bold" VerticalOptions="CenterAndExpand"/>
+                                <Label Grid.Row="2" Text="{Binding ExpirationDate, StringFormat='Exp Date: {0:MM/dd/yyyy}'}" FontSize="12" FontFamily="Mulish-Regular" />
+                            </Grid>
+                            <Border StrokeShape="RoundRectangle 5,5,5,5" Grid.Column="1" WidthRequest="100" HeightRequest="25" BackgroundColor="{Binding ExpirationDate, Converter={StaticResource DateToColorConverter}}" VerticalOptions="Center" HorizontalOptions="End" StrokeThickness="0">
+                                <Label Text="{Binding ExpirationDate, Converter={StaticResource DateToStatusConverter}}" FontFamily="Mulish-Bold" FontSize="12" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Border>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <ActivityIndicator Grid.Row="3" Grid.RowSpan="2" IsRunning="{Binding IsBusy}" Color="CornflowerBlue"/>
+        
+    </Grid>
+</ContentPage>

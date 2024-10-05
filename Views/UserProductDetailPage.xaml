@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HeThongQuanLy"
+             xmlns:vm="clr-namespace:HeThongQuanLy.ViewModels"
+             xmlns:cvt="clr-namespace:HeThongQuanLy.Converters"
+             x:Class="HeThongQuanLy.Views.UserProductDetailPage"
+             Title="UserProductDetailPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+    <ContentPage.Resources>
+        <cvt:DateToStatusConverter x:Key="DateToStatusConverter"/>
+        <cvt:DateToColorConverter x:Key="DateToColorConverter"/>
+        <cvt:DateToBoolConverter x:Key="DateToBoolConverter"/>
+    </ContentPage.Resources>
+    
+    <Grid RowDefinitions="Auto,20,Auto,20,*,Auto,Auto" Margin="0,70,0,30">
+        <Grid Grid.Row="0" ColumnDefinitions="Auto, *" ColumnSpacing="5" Padding="20,0,20,0">
+            <Image Grid.Column="0" Source="chevron_left.png" VerticalOptions="Center"> 
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BackButton_Tapped}"/>
+                </Image.GestureRecognizers>
+            </Image> 
+            <Label Grid.Column="1" FontFamily="Mulish-Bold" FontSize="24" Text="Product Information" VerticalOptions="Center"/>
+        </Grid>
+        <BoxView Grid.Row="2" HeightRequest="0.5" HorizontalOptions="Fill" Color="#DADADA"/>
+        <ScrollView VerticalOptions="Fill" Grid.Row="4">
+            <Grid RowDefinitions="Auto,Auto,15,Auto,15,Auto,Auto" Padding="20,0,20,0">
+                <Border Grid.Row="0" StrokeShape="RoundRectangle 5,5,5,5" Grid.Column="1" WidthRequest="100" HeightRequest="25" BackgroundColor="{Binding Product.ExpirationDate, Converter={StaticResource DateToColorConverter}}" VerticalOptions="Center" HorizontalOptions="Start" StrokeThickness="0">
+                    <Label Text="{Binding Product.ExpirationDate, Converter={StaticResource DateToStatusConverter}}" FontFamily="Mulish-Bold" FontSize="12" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Border>
+                <Label Grid.Row="1" Text="{Binding ProductName}" FontFamily="Mulish-SemiBold" FontSize="20" />
+                <Grid Grid.Row="3" RowDefinitions="Auto,Auto,15,Auto,Auto" ColumnDefinitions="*,*">
+                    <Label Grid.Column="0" Grid.Row="0" Text="Sitecode:" FontFamily="Mulish-Medium" FontSize="16" />
+                    <Label Grid.Column="0" Grid.Row="1" Text="{Binding Sitecode}" FontFamily="Mulish-Regular" FontSize="15" />
+                    <Label Grid.Column="1" Grid.Row="0" Text="MID:" FontFamily="Mulish-Medium" FontSize="16" />
+                    <Label Grid.Column="1" Grid.Row="1" Text="{Binding MID}" FontFamily="Mulish-Regular" FontSize="15" />
+                    <Label Grid.Column="0" Grid.Row="3" Text="Expiration date:" FontFamily="Mulish-Medium" FontSize="16" />
+                    <Label Grid.Column="0" Grid.Row="4" Text="{Binding ExpirationDate, StringFormat='{0:MM/dd/yyyy}'}"  FontFamily="Mulish-Medium" FontSize="15"/>
+                    <Label Grid.Column="1" Grid.Row="3" Text="Activation Code:" FontFamily="Mulish-Medium" FontSize="16" />
+                    <Label Grid.Column="1" Grid.Row="4" Text="{Binding ActivationCode}" FontFamily="Mulish-Regular" FontSize="15" />
+                </Grid>
+                
+                <Label Grid.Row="5" Text="Description:" FontFamily="Mulish-Medium" FontSize="16" />
+                <Label Grid.Row="6" Text="{Binding Description}" FontFamily="Mulish-Regular" FontSize="15" />
+            </Grid>
+        </ScrollView>
+        <BoxView Grid.Row="5" HeightRequest="0.5" HorizontalOptions="Fill" Color="#DADADA" IsVisible="{Binding ExpirationDate,Converter={StaticResource DateToBoolConverter}}"/>
+        <Grid Grid.Row="6" ColumnDefinitions="*" ColumnSpacing="10" Margin="20,0,20,0" Padding="0,15,0,0" IsVisible="{Binding ExpirationDate,Converter={StaticResource DateToBoolConverter}}">     
+            <Button Grid.Column="0" Text="Renew activation code" Command="{Binding RenewButton_Command}" IsEnabled="{Binding IsEnabled}" IsVisible="{Binding ExpirationDate,Converter={StaticResource DateToBoolConverter}}" BackgroundColor="Transparent" BorderColor="#3D52A0" BorderWidth="1" TextColor="#3D52A0" FontFamily="Mulish-Bold" FontSize="13" VerticalOptions="Center" HorizontalOptions="Center"/>
+        </Grid>
+    </Grid>
+</ContentPage>

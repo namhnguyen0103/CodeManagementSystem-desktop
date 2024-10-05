@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HeThongQuanLy.Views.ProductDetailPage"
+             Title="ProductDetailPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto,20,Auto,20,*,Auto,Auto" Margin="0,70,0,60">
+        <Grid Grid.Row="0" ColumnDefinitions="Auto, *" ColumnSpacing="5" Padding="20,0,20,0">
+            <Image Grid.Column="0" Source="chevron_left.png" VerticalOptions="Center"> 
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BackButton_Clicked}"/>
+                </Image.GestureRecognizers>
+            </Image> 
+            <Label Grid.Column="1" FontFamily="Mulish-Bold" FontSize="24" Text="Product Information" VerticalOptions="Center"/>
+        </Grid>
+        <BoxView Grid.Row="2" HeightRequest="0.5" HorizontalOptions="Fill" Color="#DADADA"/>
+        <ScrollView VerticalOptions="Fill" Grid.Row="4">
+            <Grid RowDefinitions="Auto,15,Auto,Auto,15,Auto,Auto" Padding="20,0,20,0">
+                <Label Grid.Row="0" Text="{Binding ProductName}" FontFamily="Mulish-SemiBold" FontSize="20" />
+                <Label Grid.Row="2" Text="Price:" FontFamily="Mulish-Medium" FontSize="16" />
+                <Label Grid.Row="3" Text="{Binding PricePerMonth, StringFormat='${0:F2}/month'}"  FontFamily="Mulish-Bold" FontSize="20"/>
+                <Label Grid.Row="5" Text="Description:" FontFamily="Mulish-Medium" FontSize="16" />
+                <Label Grid.Row="6" Text="{Binding Description}" FontFamily="Mulish-Regular" FontSize="15" />
+            </Grid>
+        </ScrollView>
+        <BoxView Grid.Row="5" HeightRequest="0.5" HorizontalOptions="Fill" Color="#DADADA"/>
+        <Grid Grid.Row="6" ColumnDefinitions="*, *" ColumnSpacing="15" Padding="15,15,15,0">
+            <Button Grid.Column="0" Text="Add to Cart" Command="{Binding AddToCartButton_Clicked}" CornerRadius="3" BackgroundColor="Transparent" BorderColor="#3D52A0" BorderWidth="1" TextColor="#3D52A0" FontFamily="Mulish-Bold" FontSize="13" VerticalOptions="Fill" HorizontalOptions="Fill"/>
+            <Button Grid.Column="1" Text="Buy now" Command="{Binding BuyNowButton_Clicked}" CornerRadius="3" BackgroundColor="Transparent" BorderColor="#3D52A0" BorderWidth="1" TextColor="#3D52A0" FontFamily="Mulish-Bold" FontSize="13" VerticalOptions="Fill" HorizontalOptions="Fill"/>
+        </Grid>
+        
+    </Grid>
+</ContentPage>

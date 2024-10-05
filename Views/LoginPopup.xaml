@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="HeThongQuanLy.Views.LoginPopup"
+             Color="White">
+    <Grid RowDefinitions="Auto" Width="300">
+        <Label Text="Invalid Login Information" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="300" HeightRequest="100"/>
+    </Grid>
+</toolkit:Popup>

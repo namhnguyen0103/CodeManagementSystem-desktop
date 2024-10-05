@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HeThongQuanLy.Views.SettingsPage"
+             Title="SettingsPage"
+             Shell.NavBarIsVisible="False">
+    
+    <Grid RowDefinitions="Auto, 5, Auto, Auto, 50, Auto, 50, Auto, 50, Auto, 50, Auto" Margin="0,70,0,60">
+        <Label Grid.Row="0" Text="Account" FontSize="24" FontFamily="Mulish-Bold" Padding="20,0,20,0"/>
+        <Grid Grid.Row="2" ColumnDefinitions="Auto, *, Auto" Margin="20,0,20,0" ColumnSpacing="10" HeightRequest="80">
+            <Image Grid.Column="0" Source="icon_setting.png" />
+            <Label Grid.Column="1" Text="Customer Name" FontFamily="Mulish-Bold" FontSize="24" VerticalOptions="Center" HorizontalOptions="Fill"/>
+            <Image Grid.Column="2" Source="chevron_right.png"/>
+        </Grid>
+        <BoxView Grid.Row="3" HeightRequest="0.5" HorizontalOptions="Fill" Color="#DADADA"/>
+        <Label Grid.Row="4" Text="Change Username" Padding="20,0,0,0" FontFamily="Mulish-SemiBold" FontSize="15" VerticalOptions="Center"/>
+        <BoxView Grid.Row="5" HeightRequest="0.5" HorizontalOptions="Fill" Color="#DADADA"/>
+        <Label Grid.Row="6" Text="Change Email" Padding="20,0,0,0" FontFamily="Mulish-SemiBold" FontSize="15" VerticalOptions="Center"/>
+        <BoxView Grid.Row="7" HeightRequest="0.5" HorizontalOptions="Fill" Color="#DADADA"/>
+        <Label Grid.Row="8" Text="Change Password" Padding="20,0,0,0" FontFamily="Mulish-SemiBold" FontSize="15" VerticalOptions="Center"/>
+        <BoxView Grid.Row="9" HeightRequest="0.5" HorizontalOptions="Fill" Color="#DADADA"/>
+        <Label Grid.Row="10" Text="Logout" Padding="20,0,0,0" TextColor="#FF3951" FontFamily="Mulish-SemiBold" FontSize="15" VerticalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding LogoutButton_Command}"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <BoxView Grid.Row="11" HeightRequest="0.5" HorizontalOptions="Fill" Color="#DADADA"/>
+    </Grid>
+
+</ContentPage>
